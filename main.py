@@ -3,6 +3,7 @@ import os
 from flask import Flask, request
 api_key='1840659837:AAHZVf6NMyZr7kW8bMaGAwX8aR7-CLVWw28'
 bot=telebot.TeleBot(api_key,parse_mode="none")
+server = Flask(__name__)
 @bot.message_handler(content_types="text")
 def ai(message):
     print(message)
