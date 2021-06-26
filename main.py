@@ -21,7 +21,7 @@ def hello(message):
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://your_heroku_project.com/' + api_key)
+    bot.set_webhook(url='https://newnoob7.herokuapp.com/' + api_key)
     return "!", 200
 
 
