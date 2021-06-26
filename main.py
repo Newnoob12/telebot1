@@ -18,6 +18,12 @@ def hello(message):
     downloaded_file = bot.download_file(file_info.file_path)
     bot.send_video(message.chat.id,data=downloaded_file,caption="sahil is great")
     bot.delete_message(chat_id=message.chat.id,message_id=message.message_id)
+@server.route('/' + TOKEN, methods=['POST'])
+def getMessage():
+    json_string = request.get_data().decode('utf-8')
+    update = telebot.types.Update.de_json(json_string)
+    bot.process_new_updates([update])
+    return "!", 200
 @server.route("/")
 def webhook():
     bot.remove_webhook()
