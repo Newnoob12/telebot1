@@ -18,6 +18,7 @@ def hello(message):
     downloaded_file = bot.download_file(file_info.file_path)
     bot.send_video(message.chat.id,data=downloaded_file,caption="sahil is great")
     bot.delete_message(chat_id=message.chat.id,message_id=message.message_id)
+print("hello world")
 @server.route('/' + api_key, methods=['POST'])
 def getMessage():
     json_string = request.get_data().decode('utf-8')
