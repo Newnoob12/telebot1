@@ -1,1 +1,1 @@
-web:python telenew.py
+web:python main.py
