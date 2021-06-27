@@ -1,5 +1,5 @@
 import telebot
-api_key='1840659837:AAHZVf6NMyZr7kW8bMaGAwX8aR7-CLVWw28'
+api_key='1840659837:AAH7jWJiFd9odluPScfYIQwMQ0SqGd2pxLk'
 bot=telebot.TeleBot(api_key)
 @bot.message_handler(content_types="text")
 def ai(message):
