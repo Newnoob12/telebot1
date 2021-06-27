@@ -8,6 +8,8 @@ def ai(message):
             bot.reply_to(message,"hi how are you "+message.from_user.first_name+" "+message.from_user.last_name)
         except:
             bot.reply_to(message,"hi how are you "+message.from_user.first_name)
+    if (message.text=="good"):
+        bot.reply_to("oh great!what u are currently doing")
 @bot.message_handler(content_types=["video"])
 def hello(message):
     file_info = bot.get_file(message.video.file_id)
