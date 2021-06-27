@@ -3,7 +3,7 @@ api_key='1840659837:AAHZVf6NMyZr7kW8bMaGAwX8aR7-CLVWw28'
 bot=telebot.TeleBot(api_key)
 @bot.message_handler(content_types="text")
 def ai(message):
-    print(message)
+   # print(message)
     if (message.text=="hi"):
         try:
             bot.reply_to(message,"hi how are you "+message.from_user.first_name+" "+message.from_user.last_name)
