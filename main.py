@@ -9,7 +9,7 @@ def ai(message):
     print(message)
     if (message.text=="hi"):
         try:
-            bot.reply_to(message,"hi how are you "+message.from_user.first_name+" "+message.from_user.last_name)
+            bot.reply_to(message,"hi how are you " + message.from_user.first_name + " " + message.from_user.last_name)
         except:
             bot.reply_to(message,"hi how are you "+message.from_user.first_name)
 @bot.message_handler(content_types=["video"])
