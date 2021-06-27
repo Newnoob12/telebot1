@@ -3,7 +3,6 @@ api_key='1840659837:AAHAfqhMLabugVzoS-VQTKWkDprmX_4Y5b8'
 bot=telebot.TeleBot(api_key)
 @bot.message_handler(content_types="text")
 def ai(message):
-   # print(message)
     if (message.text=="hi"):
         try:
             bot.reply_to(message,"hi how are you "+message.from_user.first_name+" "+message.from_user.last_name)
@@ -16,4 +15,3 @@ def hello(message):
     bot.send_video(message.chat.id,data=downloaded_file,caption="sahil is great")
     bot.delete_message(chat_id=message.chat.id,message_id=message.message_id)
 bot.polling()
-#print("hello world")
