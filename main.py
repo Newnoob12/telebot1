@@ -1,9 +1,6 @@
 import telebot
-import os
-from flask import Flask, request
 api_key='1840659837:AAHZVf6NMyZr7kW8bMaGAwX8aR7-CLVWw28'
 bot=telebot.TeleBot(api_key)
-server = Flask(__name__)
 @bot.message_handler(content_types="text")
 def ai(message):
     print(message)
@@ -19,16 +16,3 @@ def hello(message):
     bot.send_video(message.chat.id,data=downloaded_file,caption="sahil is great")
     bot.delete_message(chat_id=message.chat.id,message_id=message.message_id)
 print("hello world")
-@server.route('/' + api_key, methods=['POST'])
-def getMessage():
-    json_string = request.get_data().decode('utf-8')
-    update = telebot.types.Update.de_json(json_string)
-    bot.process_new_updates([update])
-    return "!", 200
-@server.route("/")
-def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url='https://newnoob7.herokuapp.com/' + api_key)
-    return "!", 200
-if __name__ == "__main__":
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
